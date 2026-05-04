@@ -1,125 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Perl Contractors — industrial-modern design system */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
 @layer base {
-  :root {
-    /* Core palette — charcoal/steel with orange accent */
-    --background: 0 0% 6%;
-    --foreground: 0 0% 96%;
-
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 96%;
-
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 96%;
-
-    --primary: 22 95% 54%;          /* Industrial orange */
-    --primary-foreground: 0 0% 6%;
-    --primary-glow: 30 100% 60%;
-
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 96%;
-
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 62%;
-
-    --accent: 22 95% 54%;
-    --accent-foreground: 0 0% 6%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 16%;
-    --input: 0 0% 14%;
-    --ring: 22 95% 54%;
-
-    --steel: 210 8% 35%;
-    --charcoal: 0 0% 11%;
-    --jet: 0 0% 4%;
-
-    --radius: 0.25rem;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 4% / 0.55) 0%, hsl(0 0% 4% / 0.85) 100%);
-    --gradient-orange: linear-gradient(135deg, hsl(22 95% 54%) 0%, hsl(30 100% 60%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(0 0% 4%) 100%);
-
-    /* Shadows */
-    --shadow-orange: 0 10px 40px -10px hsl(22 95% 54% / 0.45);
-    --shadow-deep: 0 25px 60px -20px hsl(0 0% 0% / 0.7);
-
-    /* Transitions */
-    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-
-    --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 22 95% 54%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 22 95% 54%;
-  }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3 { font-family: 'Playfair Display', sans-serif; }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .container-px { @apply px-6 md:px-10 lg:px-12; }
+  
+  .section-title {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white;
   }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-    @apply tracking-tight;
-  }
-}
-
-@layer utilities {
-  .font-display {
-    font-family: 'Space Grotesk', sans-serif;
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .container-px {
-    @apply px-6 md:px-10 lg:px-16;
-  }
-
-  .gradient-orange {
-    background: var(--gradient-orange);
-  }
-
-  .gradient-hero {
-    background: var(--gradient-hero);
-  }
-
-  .shadow-orange {
-    box-shadow: var(--shadow-orange);
-  }
-
-  .shadow-deep {
-    box-shadow: var(--shadow-deep);
-  }
-
-  .grid-lines {
-    background-image:
-      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
-    background-size: 60px 60px;
+  
+  .card {
+    @apply bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1;
   }
 }

@@ -7,7 +7,7 @@ const links = [
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },
-  { href: "#why", label: "Why Us" },
+  { href: "#why", label: "Why Choose Us" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -24,15 +24,15 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
-      }`}
+    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? "bg-white/85 backdrop-blur-xl border-b border-border/60 shadow-md"
+        : "bg-transparent"
+    }`}
     >
       <div className="container-px mx-auto flex h-20 items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <div className="h-11 w-11 overflow-hidden rounded-sm bg-foreground p-1">
+        <div className="h-11 w-11 overflow-hidden rounded-md bg-white border border-border/50 shadow-sm p-1">
             <img src={logo} alt="Perl Contractors logo" className="h-full w-full object-contain" />
           </div>
           <div className="leading-tight">
@@ -48,7 +48,7 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+             
             >
               {l.label}
             </a>
@@ -58,7 +58,7 @@ export const Navbar = () => {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="tel:+254748085743"
-            className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary"
+            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition"
           >
             <Phone className="h-4 w-4" /> 0748 085 743
           </a>
@@ -84,7 +84,7 @@ export const Navbar = () => {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-base font-medium text-foreground/90 hover:text-primary"
+                className="text-base font-medium text-muted-foreground hover:text-primary transition"
               >
                 {l.label}
               </a>

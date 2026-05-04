@@ -4,42 +4,28 @@ import welding from "@/assets/project-welding.jpg";
 
 export const CtaBanner = () => {
   return (
-    <section className="relative overflow-hidden">
-      <img
-        src={welding}
-        alt="Welder at work creating sparks"
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-jet/80" />
-      <div className="container-px relative mx-auto max-w-7xl py-24 md:py-32">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-primary">
-            Let's Build Together
-          </div>
-          <h2 className="font-display text-4xl font-bold leading-[1.05] text-foreground md:text-6xl lg:text-7xl text-balance">
-            Have a project <span className="text-primary">in mind?</span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-foreground/80">
-            Tell us about your build. We'll respond with timelines, scope and a
-            transparent quote — usually within 24 hours.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button variant="hero" size="xl" asChild>
-              <a href="tel:+254748085743">
-                <Phone className="mr-1 h-5 w-5" /> Call Now
-              </a>
-            </Button>
-            <Button variant="outlineLight" size="xl" asChild>
-              <a
-                href="https://wa.me/254719546875?text=Hello%20Perl%20Contractors%2C%20I%27d%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="mr-1 h-5 w-5" /> WhatsApp Us
-              </a>
-            </Button>
-          </div>
+    <section className="relative overflow-hidden py-24 md:py-32">
+      <img src={welding} alt="Welder at work" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 to-slate-950/80" />
+
+      <div className="container-px relative mx-auto max-w-4xl text-center">
+        <div className="uppercase text-sky-400 text-sm font-semibold tracking-widest mb-4">LET'S BUILD TOGETHER</div>
+        <h2 className="font-display text-5xl md:text-6xl font-bold text-white leading-tight">
+          Have a project in mind?
+        </h2>
+        <p className="mt-6 text-lg text-slate-300 max-w-xl mx-auto">
+          Tell us about your build. We respond with timelines, scope, and transparent quote — usually within 24 hours.
+        </p>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <Button variant="hero" size="xl" className="bg-sky-600 hover:bg-sky-500" asChild>
+            <a href="tel:+254748085743"><Phone className="mr-2" /> Call Now</a>
+          </Button>
+          <Button variant="outline" size="xl" className="border-slate-400 text-white hover:bg-white/10" asChild>
+            <a href="https://wa.me/254719546875?text=Hello%20Perl%20Contractors" target="_blank">
+              <MessageCircle className="mr-2" /> WhatsApp Us
+            </a>
+          </Button>
         </div>
       </div>
     </section>
