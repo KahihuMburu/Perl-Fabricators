@@ -36,7 +36,14 @@ import kikuyu from "@/assets/project-kikuyu.jpg";
 import wangige from "@/assets/project-wangige.jpg";
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
-type Cat = "All" | "Windows & Doors" | "Tank Towers" | "Guard Rails" | "Custom Fabrication" | "Steel Gates" | "Roofing";
+type Cat =
+  | "All"
+  | "Windows & Doors"
+  | "Tank Towers"
+  | "Steel Staircase & Guard Rails"
+  | "Custom Fabrication"
+  | "Steel Gates"
+  | "Roofing";
 
 interface Project {
   id: number;
@@ -47,6 +54,7 @@ interface Project {
   year: string;
   description: string;
   featured?: boolean;
+  imgPosition?: string;
 }
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
@@ -58,7 +66,8 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Nairobi, Kenya",
     year: "2024",
-    description: "Custom-designed mild steel window grilles with powder-coat finish, fabricated and installed across a residential complex in Nairobi.",
+    description:
+      "Custom-designed mild steel window grilles with powder-coat finish, fabricated and installed across a residential complex in Nairobi.",
     featured: true,
   },
   {
@@ -68,7 +77,9 @@ const projects: Project[] = [
     cat: "Tank Towers",
     location: "Machakos, Kenya",
     year: "2024",
-    description: "Structural steel tank tower engineered for a 10,000-litre capacity, with full hot-dip galvanised finish for corrosion resistance.",
+    description:
+      "Structural steel tank tower engineered for a 10,000-litre capacity, with full hot-dip galvanised finish for corrosion resistance.",
+    imgPosition: "center top",
   },
   {
     id: 3,
@@ -77,16 +88,19 @@ const projects: Project[] = [
     cat: "Tank Towers",
     location: "Limuru, Kenya",
     year: "2024",
-    description: "Agricultural elevated tower with reinforced base frame and access ladder, designed for high-humidity highland conditions.",
+    description:
+      "Agricultural elevated tower with reinforced base frame and access ladder, designed for high-humidity highland conditions.",
+    imgPosition: "center top",
   },
   {
     id: 4,
     img: claddings,
     title: "Perimeter Guard Rail System",
-    cat: "Guard Rails",
+    cat: "Steel Staircase & Guard Rails",
     location: "Nairobi, Kenya",
     year: "2024",
-    description: "Continuous staircase and balcony guard rail system fabricated from square hollow sections and flat bar, powder-coated charcoal.",
+    description:
+      "Continuous staircase and balcony guard rail system fabricated from square hollow sections and flat bar, powder-coated charcoal.",
   },
   {
     id: 5,
@@ -95,7 +109,8 @@ const projects: Project[] = [
     cat: "Steel Gates",
     location: "Kisumu, Kenya",
     year: "2024",
-    description: "Full-house burglar-proofing scope: window frames, door guards, and decorative grilles crafted to architect specification.",
+    description:
+      "Full-house burglar-proofing scope: window frames, door guards, and decorative grilles crafted to architect specification.",
   },
   {
     id: 6,
@@ -104,25 +119,28 @@ const projects: Project[] = [
     cat: "Custom Fabrication",
     location: "Mombasa, Kenya",
     year: "2024",
-    description: "Sliding gate fabricated from box section and decorative flat bar. Motorisation-ready with embedded guide rail track.",
+    description:
+      "Sliding gate fabricated from box section and decorative flat bar. Motorisation-ready with embedded guide rail track.",
   },
   {
     id: 7,
     img: steel,
     title: "Staircase Balustrade Rails",
-    cat: "Guard Rails",
+    cat: "Steel Staircase & Guard Rails",
     location: "Nairobi, Kenya",
     year: "2024",
-    description: "Interior staircase balustrade in brushed satin finish, matching architectural drawings for a mid-rise office building.",
+    description:
+      "Interior staircase balustrade in brushed satin finish, matching architectural drawings for a mid-rise office building.",
   },
   {
     id: 8,
     img: roofing,
-    title: "Steel Gate",
+    title: "Commercial Space / Foldable Doors",
     cat: "Steel Gates",
     location: "Ruiru",
     year: "2024",
-    description: "Box-profile steel roofing with custom fascia and valley flashings, installed on a residential property in Ruiru.",
+    description:
+      "Box-profile steel roofing with custom fascia and valley flashings, installed on a residential property in Ruiru.",
   },
   {
     id: 9,
@@ -131,7 +149,8 @@ const projects: Project[] = [
     cat: "Tank Towers",
     location: "Westlands",
     year: "2023",
-    description: "Freestanding canopy over commercial parking area — structural columns, purlins, and transparent polycarbonate infill.",
+    description:
+      "Freestanding canopy over commercial parking area — structural columns, purlins, and transparent polycarbonate infill.",
   },
   {
     id: 10,
@@ -140,7 +159,8 @@ const projects: Project[] = [
     cat: "Steel Gates",
     location: "Kiambu",
     year: "2024",
-    description: "Steel casement window frames, primed and gloss-coated, supplied and installed across a housing development in Kiambu.",
+    description:
+      "Steel casement window frames, primed and gloss-coated, supplied and installed across a housing development in Kiambu.",
   },
   {
     id: 11,
@@ -149,16 +169,18 @@ const projects: Project[] = [
     cat: "Custom Fabrication",
     location: "Thika Rd",
     year: "2023",
-    description: "Metal wall cladding panels in a ribbed profile, installed on a commercial façade along Thika Road for a modern industrial finish.",
+    description:
+      "Metal wall cladding panels in a ribbed profile, installed on a commercial façade along Thika Road for a modern industrial finish.",
   },
   {
     id: 12,
     img: welding,
     title: "Site Welding — Structural Works",
-    cat: "Guard Rails",
-    location: "Limuru",
-    year: "2023",
-    description: "On-site MIG and arc welding for structural steel connections on a multi-storey residential build in Limuru.",
+    cat: "Steel Staircase & Guard Rails",
+    location: "Ruiru",
+    year: "2026",
+    description:
+      "On-site MIG and arc welding for structural steel connections on a multi-storey residential build in Limuru.",
   },
   {
     id: 13,
@@ -167,7 +189,8 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Thika",
     year: "2025",
-    description: "Heavy-duty double-leaf swing gate with decorative panel inserts. Epoxy primed, gloss finished in bespoke RAL colour.",
+    description:
+      "Heavy-duty double-leaf swing gate with decorative panel inserts. Epoxy primed, gloss finished in bespoke RAL colour.",
   },
   {
     id: 14,
@@ -176,7 +199,8 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Ongata Rongai",
     year: "2026",
-    description: "Reinforced steel security door with multi-point locking mechanism and custom panel design for a residential property.",
+    description:
+      "Reinforced steel security door with multi-point locking mechanism and custom panel design for a residential property.",
   },
   {
     id: 15,
@@ -185,7 +209,8 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Nairobi",
     year: "2025",
-    description: "Steel louvred door for utility room, providing ventilation while maintaining security — powder-coated in matte black.",
+    description:
+      "Steel louvred door for utility room, providing ventilation while maintaining security — powder-coated in matte black.",
   },
   {
     id: 16,
@@ -194,7 +219,8 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Nyeri",
     year: "2024",
-    description: "Fixed and opening steel window frames for a highland cottage, designed with thermal break allowance and galvanised finish.",
+    description:
+      "Fixed and opening steel window frames for a highland cottage, designed with thermal break allowance and galvanised finish.",
   },
   {
     id: 17,
@@ -203,7 +229,8 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Kasarani",
     year: "2024",
-    description: "Decorative grille security doors for each apartment unit across a 24-unit block — uniform finish, tight fabrication tolerances.",
+    description:
+      "Decorative grille security doors for each apartment unit across a 24-unit block — uniform finish, tight fabrication tolerances.",
   },
   {
     id: 18,
@@ -212,7 +239,8 @@ const projects: Project[] = [
     cat: "Steel Gates",
     location: "Kikuyu",
     year: "2026",
-    description: "Motorised sliding gate on a ground rail, fabricated from 40×40 SHS and decorative infill. Intercom and sensor-ready.",
+    description:
+      "Motorised sliding gate on a ground rail, fabricated from 40×40 SHS and decorative infill. Intercom and sensor-ready.",
   },
   {
     id: 19,
@@ -221,7 +249,8 @@ const projects: Project[] = [
     cat: "Custom Fabrication",
     location: "Ruiru",
     year: "2025",
-    description: "Open-tread steel staircase with flat-bar treads and structural stringer, fabricated to architectural detail for a private residence.",
+    description:
+      "Open-tread steel staircase with flat-bar treads and structural stringer, fabricated to architectural detail for a private residence.",
   },
   {
     id: 20,
@@ -230,7 +259,8 @@ const projects: Project[] = [
     cat: "Steel Gates",
     location: "Nakuru",
     year: "2026",
-    description: "Ornamental mild steel gate with scrollwork detail and embedded name panel, finished in satin black for an estate entrance.",
+    description:
+      "Ornamental mild steel gate with scrollwork detail and embedded name panel, finished in satin black for an estate entrance.",
   },
   {
     id: 21,
@@ -239,7 +269,8 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Kiambu",
     year: "2025",
-    description: "Full perimeter window and door security grilles for a school complex in Kiambu — standard designs for easy replacement.",
+    description:
+      "Full perimeter window and door security grilles for a school complex in Kiambu — standard designs for easy replacement.",
   },
   {
     id: 22,
@@ -248,11 +279,20 @@ const projects: Project[] = [
     cat: "Windows & Doors",
     location: "Muthaiga",
     year: "2024",
-    description: "Complete windows and doors package for a luxury villa — custom profiles, concealed hinges, and a matching powder-coat finish.",
+    description:
+      "Complete windows and doors package for a luxury villa — custom profiles, concealed hinges, and a matching powder-coat finish.",
   },
 ];
 
-const CATS: Cat[] = ["All", "Windows & Doors", "Tank Towers", "Guard Rails", "Custom Fabrication","Steel Gates","Roofing"];
+const CATS: Cat[] = [
+  "All",
+  "Windows & Doors",
+  "Tank Towers",
+  "Steel Staircase & Guard Rails",
+  "Custom Fabrication",
+  "Steel Gates",
+  "Roofing",
+];
 const INITIAL_COUNT = 9;
 const LOAD_MORE = 6;
 
@@ -269,8 +309,14 @@ const Lightbox = ({
   const idx = all.findIndex((p) => p.id === project.id);
   const [current, setCurrent] = useState(idx);
 
-  const prev = useCallback(() => setCurrent((c) => (c - 1 + all.length) % all.length), [all.length]);
-  const next = useCallback(() => setCurrent((c) => (c + 1) % all.length), [all.length]);
+  const prev = useCallback(
+    () => setCurrent((c) => (c - 1 + all.length) % all.length),
+    [all.length]
+  );
+  const next = useCallback(
+    () => setCurrent((c) => (c + 1) % all.length),
+    [all.length]
+  );
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -302,7 +348,7 @@ const Lightbox = ({
         onClick={(e) => e.stopPropagation()}
         className="relative w-full max-w-5xl bg-[#0d1117] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row"
       >
-        {/* Image side */}
+        {/* ── Image side ── */}
         <div className="relative w-full lg:w-3/5 aspect-[4/3] lg:aspect-auto lg:min-h-[520px] bg-slate-900">
           <AnimatePresence mode="wait">
             <motion.img
@@ -314,16 +360,18 @@ const Lightbox = ({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: p.imgPosition ?? "center 25%" }}
               loading="lazy"
             />
           </AnimatePresence>
-          {/* Counter */}
-          <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-mono px-3 py-1.5 rounded-full">
+
+          {/* Counter badge */}
+          <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white text-xs font-mono px-3 py-1.5 rounded-full border border-white/10">
             {current + 1} / {all.length}
           </div>
         </div>
 
-        {/* Info side */}
+        {/* ── Info side ── */}
         <div className="w-full lg:w-2/5 flex flex-col p-8 md:p-10">
           {/* Category badge */}
           <div className="inline-flex items-center gap-2 self-start bg-sky-500/10 border border-sky-500/30 text-sky-400 text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full mb-6">
@@ -331,9 +379,13 @@ const Lightbox = ({
             {p.cat}
           </div>
 
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">{p.title}</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
+            {p.title}
+          </h2>
 
-          <p className="mt-4 text-slate-400 leading-relaxed text-sm flex-1">{p.description}</p>
+          <p className="mt-4 text-slate-400 leading-relaxed text-sm flex-1">
+            {p.description}
+          </p>
 
           <div className="mt-8 space-y-3 border-t border-slate-800 pt-6">
             <div className="flex items-center gap-3 text-sm text-slate-400">
@@ -366,7 +418,7 @@ const Lightbox = ({
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 flex items-center justify-center text-white transition-colors z-10"
+          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 border border-white/10 flex items-center justify-center text-white transition-colors z-10"
           aria-label="Close"
         >
           <X className="w-4 h-4" />
@@ -375,13 +427,19 @@ const Lightbox = ({
 
       {/* Side arrows (desktop) */}
       <button
-        onClick={(e) => { e.stopPropagation(); prev(); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          prev();
+        }}
         className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full bg-white/5 hover:bg-white/15 text-white transition-colors border border-white/10"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
-        onClick={(e) => { e.stopPropagation(); next(); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          next();
+        }}
         className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center rounded-full bg-white/5 hover:bg-white/15 text-white transition-colors border border-white/10"
       >
         <ChevronRight className="w-5 h-5" />
@@ -409,32 +467,39 @@ const ProjectCard = ({
     onClick={onClick}
     className="group cursor-pointer"
   >
-    {/* Image container — controlled aspect ratio, no unexpected crop */}
-    <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-800">
+    <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-800 ring-1 ring-white/5">
       <img
         src={project.img}
         alt={project.title}
         loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        style={{ objectPosition: project.imgPosition ?? "center 20%" }}
       />
 
-      {/* Overlay — only appears on hover, lighter touch */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+      {/* Hover overlay — light gradient only, preserves image clarity */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Category pill */}
-      <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm text-sky-300 text-[10px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full border border-sky-400/20">
+      {/* Category pill — always visible, subtle */}
+      <div className="absolute top-3 left-3 bg-black/55 backdrop-blur-sm text-sky-300 text-[10px] font-bold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full border border-sky-400/20">
         {project.cat}
       </div>
 
-      {/* Expand icon */}
-      <div className="absolute top-3 right-3 w-9 h-9 bg-sky-500 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+      {/* Expand icon — appears on hover */}
+      <div className="absolute top-3 right-3 w-9 h-9 bg-sky-500 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg shadow-sky-500/40">
         <ArrowUpRight className="w-4 h-4 text-white" />
+      </div>
+
+      {/* Bottom info strip — slides up on hover */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
+        <p className="text-white text-sm font-semibold leading-snug truncate">
+          {project.title}
+        </p>
       </div>
     </div>
 
-    {/* Meta */}
-    <div className="mt-4 space-y-1 px-0.5">
-      <h3 className="text-base font-semibold text-white leading-snug group-hover:text-sky-300 transition-colors duration-200">
+    {/* Meta below card */}
+    <div className="mt-3.5 space-y-0.5 px-0.5">
+      <h3 className="text-[15px] font-semibold text-white leading-snug group-hover:text-sky-300 transition-colors duration-200">
         {project.title}
       </h3>
       <p className="text-sm text-slate-500">
@@ -457,22 +522,24 @@ const FeaturedProject = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-    className="group relative overflow-hidden rounded-2xl cursor-pointer mb-16"
+    className="group relative overflow-hidden rounded-2xl cursor-pointer mb-16 ring-1 ring-white/5"
     onClick={onClick}
   >
-    {/* Wide banner image — 16/7 ratio — shows the image properly */}
     <div className="relative aspect-[16/7] bg-slate-800">
       <img
         src={project.img}
         alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
+        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+        style={{ objectPosition: project.imgPosition ?? "center 30%" }}
         loading="eager"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+      {/* Directional overlay — text zone dark, image zone breathes */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
+      {/* Bottom anchor for text */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
     </div>
 
-    {/* Content overlay */}
+    {/* Content */}
     <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 lg:p-16">
       <div className="max-w-xl">
         <div className="inline-flex items-center gap-2 bg-sky-500/20 border border-sky-400/30 text-sky-300 text-[10px] font-bold uppercase tracking-[0.25em] px-3 py-1.5 rounded-full mb-4">
@@ -485,13 +552,19 @@ const FeaturedProject = ({
           {project.description}
         </p>
         <div className="flex items-center gap-6 text-sm text-slate-400">
-          <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-sky-400" />{project.location}</span>
-          <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-sky-400" />{project.year}</span>
+          <span className="flex items-center gap-1.5">
+            <MapPin className="w-3.5 h-3.5 text-sky-400" />
+            {project.location}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5 text-sky-400" />
+            {project.year}
+          </span>
         </div>
       </div>
     </div>
 
-    {/* Open indicator */}
+    {/* Hover CTA */}
     <div className="absolute top-6 right-6 flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-medium px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
       View Project <ArrowUpRight className="w-3.5 h-3.5" />
     </div>
@@ -506,7 +579,8 @@ export const Projects = () => {
 
   const featured = projects.find((p) => p.featured)!;
 
-  const filtered = active === "All" ? projects : projects.filter((p) => p.cat === active);
+  const filtered =
+    active === "All" ? projects : projects.filter((p) => p.cat === active);
   const gridProjects = filtered.filter((p) => !p.featured || active !== "All");
   const displayed = gridProjects.slice(0, visibleCount);
   const hasMore = visibleCount < gridProjects.length;
@@ -517,16 +591,17 @@ export const Projects = () => {
     setVisibleCount(INITIAL_COUNT);
   };
 
-  // Lock body scroll when lightbox open
   useEffect(() => {
     if (lightboxProject) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [lightboxProject]);
 
   return (
     <section id="projects" className="relative bg-[#080c12] py-24 md:py-32">
-      {/* Subtle grid texture */}
+      {/* Subtle blueprint grid texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
@@ -544,7 +619,8 @@ export const Projects = () => {
               SELECTED WORK
             </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05]">
-              Projects Built<br />
+              Projects Built
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">
                 to Outlast
               </span>
@@ -625,7 +701,9 @@ export const Projects = () => {
         {hasMore && (
           <div className="mt-14 text-center">
             <button
-              onClick={() => setVisibleCount((v) => Math.min(v + LOAD_MORE, gridProjects.length))}
+              onClick={() =>
+                setVisibleCount((v) => Math.min(v + LOAD_MORE, gridProjects.length))
+              }
               className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-slate-800/80 border border-slate-700/60 text-slate-300 hover:text-white hover:border-sky-500/40 hover:bg-slate-800 transition-all duration-300 text-sm font-medium"
             >
               Load More Projects

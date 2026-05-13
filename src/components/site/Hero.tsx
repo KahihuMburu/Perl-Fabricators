@@ -6,15 +6,38 @@ import hero from "@/assets/hero-steel.jpg";
 export const Hero = () => {
   return (
     <section id="top" className="relative min-h-screen w-full overflow-hidden">
+      {/*
+        ── Image framing fix ──────────────────────────────────────────────────
+        Previously: object-cover with no position hint → browser zooms to fill,
+        often centering on an irrelevant area.
+
+        Fix:
+        • object-cover is kept (we need it to fill the screen) but we set
+          object-position to "center 30%" so the camera sits in the upper-mid
+          zone of the image — typically where the full steel structure is visible.
+        • scale is NOT applied here (no scale-110 / scale-105). The image
+          renders at true 1:1, giving maximum structural clarity.
+        • The dark overlay is split into two layers:
+            1. A mild flat black (opacity lowered from /50 → /35) for base readability
+            2. A directional gradient from-primary/50 (was /60) — less colour wash
+        Both changes together expose significantly more image detail.
+      */}
       <img
         src={hero}
         alt="Steel construction at sunset with welders working on a structural framework"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
         width={1280}
         height={1080}
       />
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-black/40 to-black/70" />
+
+      {/* Layer 1 — reduced flat dark wash */}
+      <div className="absolute inset-0 bg-black/35" />
+
+      {/* Layer 2 — directional gradient, softer than before */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-black/25 to-black/65" />
+
+      {/* Layer 3 — bottom vignette only, protects text without killing the image */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end container-px pb-20 pt-32">
         <motion.div
@@ -23,7 +46,7 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl space-y-6"
         >
-          <div className="mb-6 inline-flex items-center gap-2 border border-white/20 bg-white/10 text-white/80 backdrop-blur-md px-3 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-white backdrop-blur">
+          <div className="mb-6 inline-flex items-center gap-2 border border-white/20 bg-white/10 text-white/80 backdrop-blur-md px-3 py-1.5 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Ruiru · Kiambu County · Kenya
           </div>
