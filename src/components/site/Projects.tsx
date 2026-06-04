@@ -31,7 +31,6 @@ import door2 from "@/assets/project-door2.jpg";
 import door3 from "@/assets/project-door3.jpg";
 import gate1 from "@/assets/project-gate1.jpg";
 import custom from "@/assets/project-custom.jpg";
-import gate from "@/assets/project-gate.jpg";
 import kikuyu from "@/assets/project-kikuyu.jpg";
 import wangige from "@/assets/project-wangige.jpg";
 import mlango from "@/assets/project-mlango.jpg";
@@ -138,17 +137,7 @@ const projects: Project[] = [
       "Bespoke steel fabrication piece designed and completed to exact client drawings.",
     imgPosition: "center center",
   },
-  {
-    id: 7,
-    img: steel,
-    title: "Staircase Balustrade Rails",
-    cat: "Steel Staircase & Guard Rails",
-    location: "Nairobi, Kenya",
-    year: "2024",
-    description:
-      "Interior staircase balustrade with a satin finish, fabricated to match architectural drawings for a mid-rise office.",
-    imgPosition: "center center",
-  },
+  
   {
     id: 8,
     img: roofing,
@@ -174,34 +163,34 @@ const projects: Project[] = [
   {
     id: 10,
     img: fabrication,
-    title: "Casement Sliding Gate",
+    title: "Decorative Sliding Steel Gate",
     cat: "Steel Gates",
     location: "Kiambu",
-    year: "2024",
+    year: "2025",
     description:
-      "Smooth-running sliding gate on a ground rail, primed and gloss-coated for a residential driveway.",
+      "Manually operated sliding steel gate with decorative cut-out panels, installed on a ground rail for a residential driveway.",
     imgPosition: "center center",
   },
   {
     id: 11,
     img: cladding,
-    title: "Facade Cladding — Commercial Block",
+    title: "Finished Steel Table Frame",
     cat: "Custom Fabrication",
     location: "Thika Rd",
     year: "2023",
     description:
-      "Ribbed metal cladding panels installed on a commercial façade along Thika Road for a clean industrial look.",
+      "Custom-fabricated finished steel table frame with precision welding and structural reinforcement for durability and clean finishing.",
     imgPosition: "center center",
   },
   {
     id: 12,
     img: welding,
-    title: "Site Welding — Structural Works",
-    cat: "Steel Staircase & Guard Rails",
+    title: "Site Welding — Structural Steelworks",
+    cat: "Roofing",
     location: "Ruiru",
     year: "2026",
     description:
-      "On-site MIG and arc welding for structural steel connections on a multi-storey residential build.",
+      "On-site MIG and arc welding for structural steelworks including godowns, roofing systems, sheeting, and cladding installations.",
     imgPosition: "center center",
   },
   {
@@ -229,69 +218,59 @@ const projects: Project[] = [
   {
     id: 15,
     img: door1,
-    title: "Louvred Ventilation Door",
+    title: "Custom Double-Leaf Steel Door",
     cat: "Custom Fabrication",
     location: "Nairobi",
     year: "2025",
     description:
-      "Steel louvred door for a utility room — ventilation-friendly and powder-coated in matte black.",
+      "Custom-fabricated double-leaf steel door designed for residential and utility use, built with reinforced steel framing and a durable powder-coated finish in matte black.",
     imgPosition: "center center",
   },
   {
     id: 16,
     img: door2,
-    title: "Cottage Window Frames",
+    title: "Single Leaf Steel Door",
     cat: "Custom Fabrication",
     location: "Nyeri",
     year: "2024",
     description:
-      "Steel window frames with a galvanised finish, designed and installed for a highland cottage.",
+      "Custom-fabricated single-leaf steel door finished with a single coat of grey oxide for basic corrosion protection and a clean industrial finish.",
     imgPosition: "center center",
   },
   {
     id: 17,
     img: door3,
-    title: "Apartment Grill Door",
+    title: "Custom Double-Leaf Apartment Door",
     cat: "Custom Fabrication",
     location: "Kasarani",
     year: "2024",
     description:
-      "Decorative security grill doors installed uniformly across a 24-unit apartment block.",
+      "Custom-fabricated double-leaf security doors installed uniformly across a 24-unit apartment block, designed for durability and consistent architectural finish.",
     imgPosition: "center center",
   },
   {
     id: 18,
     img: gate1,
-    title: "Automated Sliding Gate",
+    title: "Sliding Steel Gate with Horizontal Cladding",
     cat: "Steel Gates",
     location: "Kikuyu",
     year: "2026",
     description:
-      "Motorised sliding gate on a ground rail — fully automation-ready and intercom-compatible.",
+      "Fabricated sliding steel gate with horizontal steel cladding, built on a ground rail system and prepared for installation.",
     imgPosition: "center center",
   },
   {
     id: 19,
     img: custom,
-    title: "Bespoke Steel Fabrication",
+    title: "On-Order Steel Fabrication",
     cat: "Custom Fabrication",
     location: "Ruiru",
     year: "2025",
     description:
-      "Open-tread steel staircase with flat-bar treads, built to architectural detail for a private residence.",
+      "Custom-fabricated steel table frame built for durability and clean modern aesthetics, tailored to client specifications.",
     imgPosition: "center center",
   },
-  {
-    id: 20,
-    img: gate,
-    title: "Ornamental Estate Gate",
-    cat: "Steel Gates",
-    location: "Nakuru",
-    year: "2026",
-    description:
-      "Ornamental mild steel estate gate with scrollwork detail and a satin black finish.",
-    imgPosition: "center center",
-  },
+
   // ── IDs 21–31: imgPosition tuned to pull back and show full structure ────────
   {
     id: 21,
@@ -314,7 +293,7 @@ const projects: Project[] = [
     location: "Muthaiga",
     year: "2024",
     description:
-      "Full windows package for a luxury villa — matching powder-coat finish and concealed hardware throughout.",
+    "Full windows package for a luxury villa — finished with a single coat of grey oxide primer and concealed hardware throughout.",
     // CHANGED: wide shots benefit from a centred anchor so the full
     // window width is visible rather than a zoomed-in corner.
     imgPosition: "center center",
@@ -322,12 +301,12 @@ const projects: Project[] = [
   {
     id: 23,
     img: mlango,
-    title: "Villa Door Package",
+    title: "Villa Steel Door",
     cat: "Custom Fabrication",
     location: "Muthaiga",
     year: "2024",
     description:
-      "Custom steel door package for a villa — consistent finish across all entry and interior doors.",
+      "Custom-fabricated steel door for a luxury villa in Muthaiga, finished with concealed hardware and a clean modern profile.",
     // CHANGED: "50% 40%" keeps the full door height in frame.
     imgPosition: "50% 40%",
   },
@@ -352,7 +331,7 @@ const projects: Project[] = [
     location: "Limuru",
     year: "2024",
     description:
-      "Powder-coated steel gate fabricated and installed for a residential property in Limuru.",
+      "Steel gate fabricated and installed for a residential property in Limuru, finished with a single coat of grey oxide primer for corrosion protection",
     // CHANGED: "50% 55%" slightly lower anchor, keeps gate base visible.
     imgPosition: "50% 55%",
   },
@@ -413,25 +392,12 @@ const projects: Project[] = [
     title: "Heavy Duty Steel Gate",
     cat: "Steel Gates",
     location: "Nairobi, Kenya",
-    year: "2024",
+    year: "2025",
     description:
-      "Heavy-duty steel gate engineered for a high-traffic entrance, with anti-corrosion priming throughout.",
+      "Heavy-duty steel gate engineered for a high-traffic entrance.",
     featured: true,
     // CHANGED: true centre so the full gate width is visible.
     imgPosition: "50% 50%",
-  },
-  {
-    id: 31,
-    img: cuppy,
-    title: "Custom Steel Fabrication",
-    cat: "Custom Fabrication",
-    location: "Nairobi, Kenya",
-    year: "2024",
-    description:
-      "Bespoke steel piece fabricated to client brief with a premium powder-coat finish.",
-    featured: true,
-    // CHANGED: "50% 45%" provides a natural centre-weighted frame.
-    imgPosition: "50% 45%",
   },
 ];
 
