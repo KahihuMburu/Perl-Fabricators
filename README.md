@@ -3,7 +3,7 @@
 A modern, industrial-themed corporate website for **Perl Contractors**, a steel fabrication and construction firm based in Ruiru, Kiambu County, Kenya.
 
 > **Tagline:** Solid work. Superior finishes.
-> **Live preview:** https://perlfabs.lovable.app
+> **Live preview:** https://perlfabricators.co.ke
 
 ---
 
